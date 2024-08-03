@@ -3,6 +3,6 @@ playground: playground.c
 	gcc -o playground playground.c
 	./playground
 
-clean:
+c:
 	rm -f playground
 	clear
