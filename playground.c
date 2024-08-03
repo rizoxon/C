@@ -1,20 +1,21 @@
-#include <stdio.h>
-// #include <ctype.h>
-#include <math.h>
+void rm_chars(char s[], char c[]){
+	char result[100];
+	int n = 0;
+	int j = 0;
+	int count = 0;
 
-void squeeze(char s[], int c){
-	int i, j;
+	for(int i=0; s[i] != '\0'; i++){
+		if(s[i] != c[j++]){
+			result[count++] = s[i];
+		}
+	}
 
-	for(i=j=0; s[i] != '\0'; i++)
-		if(s[i] != c)
-			s[j++] = s[i];
-
-	s[j] = '\0';
+	result[count] = '\0';
 }
 
 int main(){
 	char a[] = "hello";
-	squeeze(a, 'l');	
-
-	printf("%s\n", a);
+	char b[] = "he";
+	
+	rm_chars(a, b);
 }
